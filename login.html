@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.min.css">
+</head>
+<body style="color: honeydew;">
+    <div class="lsd"><br><br><br><br>
+        <form id="form" action="" method="GET">
+            <div class="wrq">
+                <div  class="err"></div>
+                <div id="wtr"></div>
+                <div class="wsz"> <br>
+                    <label for="name">Name</label><i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" class="nme"> <br>
+                   <div class="gyd">
+                    <label for="password">PWD</label>
+                    <input type="password" class="pass">
+                   </div>
+
+                   <div class="gyds">
+                    <label for="passwords"></label>
+                    <input type="password" class="passs" placeholder="CONFIRM PASSWORD">
+                   </div>
+                    
+                </div>
+                <div>
+                   
+                </div>
+                <button type="submit" class="wq">Submit</button>
+            </div>
+        
+        </form>
+    
+    </div>
+    
+
+    <!-- <script src="hgf.js"></script> -->
+    <script>
+
+var nameg = document.querySelector('.nme');
+var password = document.querySelector('.pass');
+var passwords = document.querySelector('.passs');
+var form = document.getElementById('form');
+var err = document.querySelector('.err');
+var ergr = document.getElementById('wtr');
+var b = /^[a-zA-Z]*$/;
+
+
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault()
+    if (nameg.value === '' || password.value == null){
+        err.innerHTML=' Name is required'
+    }
+    else if (nameg.value.length <= 3){
+        err.innerHTML='your Name should be more than three (3) characters'
+    }
+    else if(!nameg.value.match(b)){
+        err.innerHTML='name requires only alphabets please'
+    }
+    else if(password.value!=passwords.value){
+        err.innerHTML='password mismatch'
+    }
+    else if(passwords.value === ''){
+        err.innerHTML='pls confirm your password'
+    }
+   
+     else if(password.value === ''){
+        err.innerHTML='Password must be filled'
+    } 
+   
+    else if(password.value.length <= 6){
+        err.innerHTML='Password must be longer than 6 characters'
+    }
+    else if(password.value.length > 10){
+        err.innerHTML='Password should not longer than 10'
+
+    }
+    else if(password.value === 'password'){
+        err.innerHTML='Password cant be password'
+
+    }
+   
+    else{ 
+       window.location.assign("pic.html");  
+       ergr.innerHTML='Thank you' 
+       err.innerHTML = "";    
+
+       
+    }
+
+    // function vtgr (){
+    //     content.style.color ='blue';
+    // }        
+
+})
+
+    </script>
+</body>
+</html>
